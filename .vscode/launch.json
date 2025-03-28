@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Deno Server",
+        "type": "node",
+        "request": "launch",
+        "cwd": "${workspaceFolder}",
+        "runtimeExecutable": "deno",
+        "runtimeArgs": [
+          "run",
+          "--inspect-brk",
+          "--allow-net",
+          "--allow-read",
+          "server.js"
+        ],
+        "attachSimplePort": 9229,
+        "outputCapture": "std"
+      },
+      {
+        "name": "Attach to Deno",
+        "type": "node",
+        "request": "attach",
+        "port": 9229
+      }
+    ]
+  }

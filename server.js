@@ -2,10 +2,13 @@
 // This server handles scraping requests and serves the frontend
 
 import { serve } from "https://deno.land/std/http/server.ts";
-import { v4 as uuidv4 } from "https://deno.land/std/uuid/mod.ts";
+import { NAMESPACE_URL } from "jsr:@std/uuid/constants";
+import { generate, validate } from "jsr:@std/uuid/v5";
+//import { v5 as uuidv5 } from "https://deno.land/std/uuid/mod.ts";
 
 // Store for active scraping jobs
 const jobs = new Map();
+
 
 /**
  * Extracts email addresses from HTML content
@@ -147,7 +150,8 @@ async function handler(req) {
         });
       }
       
-      const jobId = uuidv4.generate();
+      const data = new TextEncoder().encode("example.com");
+      const jobId = await generate(NAMESPACE_URL, data);
       const job = {
         id: jobId,
         urls: body.urls,
