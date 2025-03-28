@@ -4,7 +4,6 @@
 import { serve } from "https://deno.land/std/http/server.ts";
 import { NAMESPACE_URL } from "jsr:@std/uuid/constants";
 import { generate, validate } from "jsr:@std/uuid/v5";
-//import { v5 as uuidv5 } from "https://deno.land/std/uuid/mod.ts";
 
 // Store for active scraping jobs
 const jobs = new Map();
