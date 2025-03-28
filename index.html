@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Contact Scraper</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Website Contact Scraper</h1>
+        <p class="description">
+            Enter multiple website URLs separated by commas to extract email addresses.
+        </p>
+        
+        <div class="input-section">
+            <textarea id="urlInput" placeholder="https://example1.com, https://example2.com, ..."></textarea>
+            <button id="scrapeButton">Scrape</button>
+        </div>
+        
+        <div id="progressSection" class="progress-section hidden">
+            <h3>Scraping Progress</h3>
+            <div class="progress-container">
+                <progress id="progressBar" value="0" max="100"></progress>
+                <span id="progressText">0/0 URLs processed</span>
+            </div>
+        </div>
+        
+        <div id="resultsSection" class="results-section hidden">
+            <h3>Results</h3>
+            <div class="results-summary">
+                <span id="successCount">0 successful</span> | 
+                <span id="errorCount">0 errors</span> | 
+                <span id="emailCount">0 emails found</span>
+            </div>
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Status</th>
+                        <th>Results</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody"></tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="/script.js"></script>
+</body>
+</html> 
